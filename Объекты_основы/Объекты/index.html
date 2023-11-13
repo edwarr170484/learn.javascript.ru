@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объекты</title>
+</head>
+
+<body>
+    <script>
+        //Задача 1
+        let user = {
+            name: "John",
+            surname: "Smith",
+        }
+
+        user.name = "Pete";
+        delete user.name;
+
+        //Задача 2
+        function isEmpty(obj) {
+            for (key in obj) {
+                return false;
+            }
+
+            return true;
+        }
+
+        let schedule = {};
+        console.log(isEmpty(schedule));
+        schedule["8:30"] = "get up";
+        console.log(isEmpty(schedule));
+
+        //Задача 3
+        const user1 = {
+            name: "John"
+        };
+
+        // это будет работать?
+        user1.name = "Pete"; //да, это будет работать, свойства и методы можно менять
+
+        //Задача 5
+        let salaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130
+        }
+
+        let sum = 0;
+
+        for (key in salaries) {
+            sum += salaries[key];
+        }
+
+        //Задача 6
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+
+        for (key in menu) {
+            if (typeof menu[key] == "number") {
+                menu[key] *= 2;
+            }
+        }
+
+        console.log(menu);
+    </script>
+</body>
+
+</html>
